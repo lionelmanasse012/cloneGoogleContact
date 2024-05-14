@@ -1,0 +1,16 @@
+.navBar {
+  @include diplayFlexAlignItemCenter;
+  padding: 16px;
+  height: 80px;
+
+  .navBarLogoContainer {
+    @include diplayFlexAlignItemCenter;
+    width: 285px;
+    gap: 1rem;
+  }
+
+  .navBarRight {
+    @include diplayFlexSpaceBetween;
+    width: calc(100% - 80px);
+  }
+}

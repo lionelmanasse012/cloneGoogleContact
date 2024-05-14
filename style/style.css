@@ -1,0 +1,36 @@
+@import url("https://fonts.cdnfonts.com/css/google-sans");
+@import url("https://fonts.googleapis.com/css2?family=Material+Icons");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  list-style: none;
+  font-family: "Product Sans", sans-serif;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+
+body {
+  background: #f7fafc;
+  color: #5f6368;
+}
+
+.navBar {
+  display: flex;
+  align-items: center;
+  padding: 16px;
+  height: 80px;
+}
+.navBar .navBarLogoContainer {
+  display: flex;
+  align-items: center;
+  width: 285px;
+  gap: 1rem;
+}
+.navBar .navBarRight {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: calc(100% - 80px);
+}/*# sourceMappingURL=style.css.map */
