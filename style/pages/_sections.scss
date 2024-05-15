@@ -1,0 +1,122 @@
+.homeContainer {
+  display: flex;
+
+  .homeContactLeft {
+    width: 270px;
+
+    .homeCreateContactBtn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      color: #001d35;
+      gap: 12px;
+      width: 160px;
+      height: 50px;
+      border-radius: 1rem;
+      background: #c2e7ff;
+      margin: 8px 1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .homeContactType {
+      margin: 8px 2rem 8px 1rem;
+
+      .homeContactTypeItem {
+        position: relative;
+        display: flex;
+        align-items: center;
+        font-size: 0.8rem;
+        gap: 12px;
+        border-radius: 999px;
+        background: transparent;
+        padding: 10px 1rem;
+        cursor: pointer;
+
+        &:hover {
+          background: #31363a1c;
+        }
+
+        .personOutlinedHomeContact {
+          display: none;
+        }
+        .homeContactTotal {
+          position: absolute;
+          font-weight: normal;
+          right: 1rem;
+        }
+      }
+
+      .homeContactTypeItem:first-child {
+        display: flex;
+        align-items: center;
+        font-size: 0.8rem;
+        font-weight: 600;
+        color: #001d35;
+        gap: 12px;
+        border-radius: 999px;
+        background: #c2e7ff;
+        padding: 10px 1rem;
+
+        &:hover {
+          background: #b0dcfa;
+        }
+      }
+    }
+
+    .homeContactOthers {
+      margin: 8px 2rem 8px 1rem;
+
+      .homeContactOthersTitle {
+        display: block;
+        font-size: 0.8rem;
+        font-weight: 600;
+        padding: 0.8rem 1rem;
+      }
+
+      .homeContactOthersList {
+        .homeContactOthersItem {
+          position: relative;
+          display: flex;
+          align-items: center;
+          font-size: 0.8rem;
+          gap: 12px;
+          border-radius: 999px;
+          background: transparent;
+          padding: 10px 1rem;
+          cursor: pointer;
+
+          &:hover {
+            background: #31363a1c;
+          }
+        }
+      }
+    }
+
+    .homeContactLibelle {
+      margin: 8px 2rem 8px 1rem;
+
+      .homeContactLibelleTitleBlock {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .homeContactLibelleTitle {
+          display: block;
+          font-size: 0.8rem;
+          font-weight: 600;
+          padding: 0.8rem 1rem;
+        }
+      }
+    }
+  }
+}
+
+.homeContactEmptyImgBlock {
+  width: 220px;
+  height: 220px;
+
+  .homeContactEmptyImg {
+    width: 100%;
+  }
+}

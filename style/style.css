@@ -16,21 +16,185 @@ body {
   color: #5f6368;
 }
 
-.navBar {
-  display: flex;
-  align-items: center;
-  padding: 16px;
-  height: 80px;
-}
-.navBar .navBarLogoContainer {
-  display: flex;
-  align-items: center;
-  width: 285px;
-  gap: 1rem;
-}
-.navBar .navBarRight {
+.nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: calc(100% - 80px);
+  gap: 12px;
+  padding: 8px 1rem;
+}
+.nav .navLeft {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 270px;
+  height: 100%;
+}
+.nav .navLeft .navLeftLogo {
+  width: 40px;
+  height: 40px;
+}
+.nav .navLeft .navLeftLabel {
+  font-size: 1.2rem;
+}
+.nav .navRight {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: calc(100% - 270px);
+}
+.nav .navRight .navCenter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #f1f3f4;
+  width: 65%;
+  height: 45px;
+  border-radius: 8px;
+}
+.nav .navRight .navCenter .navCenterSearchBtn,
+.nav .navRight .navCenter .navCenterCloseBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  color: #5f6368;
+  border: none;
+  border-radius: 999px;
+  padding: 8px;
+  margin: 8px;
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.nav .navRight .navCenter .navCenterSearchBtn:hover,
+.nav .navRight .navCenter .navCenterCloseBtn:hover {
+  background: rgba(126, 126, 126, 0.1098039216);
+}
+.nav .navRight .navCenter .navCenterCloseBtn {
+  display: none;
+}
+.nav .navRight .navCenter .navCenterInput {
+  background: transparent;
+  border: none;
+  outline: none;
+  padding: 0 10px;
+  font-size: 1rem;
+  width: 100%;
+  height: 100%;
+}
+.nav .navRight .navCompteSettings {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.nav .navRight .navCompteSettings .settings {
+  margin-right: 20px;
+}
+
+.homeContainer {
+  display: flex;
+}
+.homeContainer .homeContactLeft {
+  width: 270px;
+}
+.homeContainer .homeContactLeft .homeCreateContactBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  color: #001d35;
+  gap: 12px;
+  width: 160px;
+  height: 50px;
+  border-radius: 1rem;
+  background: #c2e7ff;
+  margin: 8px 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.homeContainer .homeContactLeft .homeContactType {
+  margin: 8px 2rem 8px 1rem;
+}
+.homeContainer .homeContactLeft .homeContactType .homeContactTypeItem {
+  position: relative;
+  display: flex;
+  align-items: center;
+  font-size: 0.8rem;
+  gap: 12px;
+  border-radius: 999px;
+  background: transparent;
+  padding: 10px 1rem;
+  cursor: pointer;
+}
+.homeContainer .homeContactLeft .homeContactType .homeContactTypeItem:hover {
+  background: rgba(49, 54, 58, 0.1098039216);
+}
+.homeContainer .homeContactLeft .homeContactType .homeContactTypeItem .personOutlinedHomeContact {
+  display: none;
+}
+.homeContainer .homeContactLeft .homeContactType .homeContactTypeItem .homeContactTotal {
+  position: absolute;
+  font-weight: normal;
+  right: 1rem;
+}
+.homeContainer .homeContactLeft .homeContactType .homeContactTypeItem:first-child {
+  display: flex;
+  align-items: center;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #001d35;
+  gap: 12px;
+  border-radius: 999px;
+  background: #c2e7ff;
+  padding: 10px 1rem;
+}
+.homeContainer .homeContactLeft .homeContactType .homeContactTypeItem:first-child:hover {
+  background: #b0dcfa;
+}
+.homeContainer .homeContactLeft .homeContactOthers {
+  margin: 8px 2rem 8px 1rem;
+}
+.homeContainer .homeContactLeft .homeContactOthers .homeContactOthersTitle {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.8rem 1rem;
+}
+.homeContainer .homeContactLeft .homeContactOthers .homeContactOthersList .homeContactOthersItem {
+  position: relative;
+  display: flex;
+  align-items: center;
+  font-size: 0.8rem;
+  gap: 12px;
+  border-radius: 999px;
+  background: transparent;
+  padding: 10px 1rem;
+  cursor: pointer;
+}
+.homeContainer .homeContactLeft .homeContactOthers .homeContactOthersList .homeContactOthersItem:hover {
+  background: rgba(49, 54, 58, 0.1098039216);
+}
+.homeContainer .homeContactLeft .homeContactLibelle {
+  margin: 8px 2rem 8px 1rem;
+}
+.homeContainer .homeContactLeft .homeContactLibelle .homeContactLibelleTitleBlock {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.homeContainer .homeContactLeft .homeContactLibelle .homeContactLibelleTitleBlock .homeContactLibelleTitle {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.8rem 1rem;
+}
+
+.homeContactEmptyImgBlock {
+  width: 220px;
+  height: 220px;
+}
+.homeContactEmptyImgBlock .homeContactEmptyImg {
+  width: 100%;
 }/*# sourceMappingURL=style.css.map */
