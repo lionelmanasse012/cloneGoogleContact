@@ -1,33 +1,34 @@
 .homeContainer {
   display: flex;
+  padding-top: 10px;
+  gap: 12px;
 
   .homeContactLeft {
-    width: 270px;
+    margin: 8px 1rem;
+    width: 285px;
 
     .homeCreateContactBtn {
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 0.8rem;
+      font-size: 0.9rem;
       color: #001d35;
       gap: 12px;
       width: 160px;
       height: 50px;
       border-radius: 1rem;
       background: #c2e7ff;
-      margin: 8px 1rem;
+      margin-bottom: 15px;
       cursor: pointer;
       transition: all 0.3s ease;
     }
 
     .homeContactType {
-      margin: 8px 2rem 8px 1rem;
-
       .homeContactTypeItem {
         position: relative;
         display: flex;
         align-items: center;
-        font-size: 0.8rem;
+        font-size: 0.9rem;
         gap: 12px;
         border-radius: 999px;
         background: transparent;
@@ -35,7 +36,7 @@
         cursor: pointer;
 
         &:hover {
-          background: #31363a1c;
+          background: #c2e7ff51;
         }
 
         .personOutlinedHomeContact {
@@ -51,7 +52,7 @@
       .homeContactTypeItem:first-child {
         display: flex;
         align-items: center;
-        font-size: 0.8rem;
+        font-size: 0.9rem;
         font-weight: 600;
         color: #001d35;
         gap: 12px;
@@ -66,11 +67,9 @@
     }
 
     .homeContactOthers {
-      margin: 8px 2rem 8px 1rem;
-
       .homeContactOthersTitle {
         display: block;
-        font-size: 0.8rem;
+        font-size: 0.9rem;
         font-weight: 600;
         padding: 0.8rem 1rem;
       }
@@ -80,12 +79,43 @@
           position: relative;
           display: flex;
           align-items: center;
-          font-size: 0.8rem;
+          font-size: 0.9rem;
           gap: 12px;
           border-radius: 999px;
           background: transparent;
           padding: 10px 1rem;
           cursor: pointer;
+
+          &:hover {
+            background: #c2e7ff51;
+          }
+        }
+      }
+    }
+
+    .homeContactLibelle {
+      .homeContactLibelleTitleBlock {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .homeContactLibelleTitle {
+          display: block;
+          font-size: 0.9rem;
+          font-weight: 600;
+          padding: 0.8rem 1rem;
+        }
+
+        .homeContactAddLibelle {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 999px;
+          background: transparent;
+          width: 40px;
+          height: 40px;
+          cursor: pointer;
+          transition: all 0.3s ease;
 
           &:hover {
             background: #31363a1c;
@@ -94,20 +124,187 @@
       }
     }
 
-    .homeContactLibelle {
-      margin: 8px 2rem 8px 1rem;
-
-      .homeContactLibelleTitleBlock {
+    .homeContactLibelleList {
+      .homeContactLibelleListItem {
+        position: relative;
         display: flex;
         align-items: center;
         justify-content: space-between;
-        .homeContactLibelleTitle {
-          display: block;
-          font-size: 0.8rem;
-          font-weight: 600;
-          padding: 0.8rem 1rem;
+
+        .homeContactLibelleIconeBlock {
+          display: flex;
+          align-items: center;
+          font-size: 0.9rem;
+          gap: 12px;
+          border-radius: 999px;
+          padding: 0 1rem;
+          width: 100%;
+          height: 45px;
+          background: transparent;
+          cursor: pointer;
+          transition: all 0.3s ease;
+
+          &:hover {
+            background: #c2e7ff51;
+          }
+
+          &:hover ~ .homeContactLibelleUpdate {
+            opacity: 1;
+          }
+        }
+
+        .homeContactLibelleUpdate {
+          position: absolute;
+          right: 0;
+          display: flex;
+          align-items: center;
+          height: 100%;
+          border-radius: 0 999px 999px 0;
+          background: transparent;
+          opacity: 0;
+          cursor: pointer;
+          transition: all 0.3s ease;
+
+          &:hover {
+            opacity: 1;
+          }
+
+          .homeContactLibelleUpdateBlock {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: transparent;
+            border-radius: 999px;
+            width: 40px;
+            height: 40px;
+
+            &:hover {
+              background: #31363a1c;
+            }
+          }
         }
       }
+    }
+  }
+
+  .homeContactRight {
+    width: calc(100% - 285px);
+    height: calc(100vh - 70px);
+
+    .homeContactBlock {
+      background: #fff;
+      border-radius: 24px;
+      margin-right: 1rem;
+      padding: 2rem;
+      height: 97%;
+
+      .homeContactTitle {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+
+        .homeContactTitleLabel {
+          font-size: 1.5rem;
+        }
+
+        .homeContactTotal {
+          font-size: 0.9rem;
+        }
+      }
+
+      .homeContactBlockCenter {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+
+        .homeContactEmpty {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 2rem;
+
+          .homeContactEmptyTitle {
+            font-size: 1rem;
+            color: #1f1f1f;
+          }
+        }
+
+        .homeContactAdded {
+          width: 100%;
+
+          .homeContactAddedTopBar {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            height: 50px;
+
+            .homeContactAddedTopBarItem:first-child {
+              width: calc(36% - 160px);
+            }
+
+            .homeContactAddedTopBarItem:nth-child(2),
+            .homeContactAddedTopBarItem:nth-child(3),
+            .homeContactAddedTopBarItem:nth-child(4),
+            .homeContactAddedTopBarItem:nth-child(5) {
+              width: 16%;
+            }
+
+            .blockIcons {
+              display: flex;
+              align-items: center;
+
+              i {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 999px;
+                width: 40px;
+                height: 40px;
+                cursor: pointer;
+                transition: all 0.3s ease;
+
+                &:hover {
+                  background: #31363a1c;
+                }
+              }
+            }
+          }
+        }
+        
+        .homeContactCreated {
+          display: flex;
+          align-items: center;
+          display: flex;
+          gap: 8px;
+          height: 50px;
+          margin: 0 4px;
+          width: 100%;
+
+          .homeContactCreatedItem:first-child {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            width: calc(36% - 160px);
+          }
+
+          .homeContactCreatedItem:nth-child(2),
+          .homeContactCreatedItem:nth-child(3),
+          .homeContactCreatedItem:nth-child(4),
+          .homeContactCreatedItem:nth-child(5) {
+            width: 16%;
+          }
+        }
+      }
+    }
+
+    .homeCreateContact {
+      display: none;
+    }
+
+    .homeCreateContact {
+      display: none;
     }
   }
 }

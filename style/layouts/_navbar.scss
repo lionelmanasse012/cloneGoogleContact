@@ -4,12 +4,14 @@
   justify-content: space-between;
   gap: 12px;
   padding: 8px 1rem;
-
+  padding-left: 1.5rem;
+  height: 70px;
+  
   .navLeft {
     display: flex;
     align-items: center;
     gap: 1rem;
-    width: 270px;
+    width: 285px;
     height: 100%;
 
     .navLeftLogo {
@@ -26,7 +28,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: calc(100% - 270px);
+    width: calc(100% - 285px);
 
     .navCenter {
       display: flex;

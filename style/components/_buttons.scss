@@ -1,0 +1,25 @@
+.homeContactEmptyBtn {
+  display: flex;
+  gap: 5px;
+
+  button[type="button"] {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    color: #0b57d0;
+    font-size: 0.875rem;
+    font-family: "Product Sans", Roboto, Arial, sans-serif;
+    line-height: inherit;
+    letter-spacing: 0;
+    background: transparent;
+    border-radius: 100px;
+    padding: 1px 1rem;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background: #0b57d018;
+    }
+  }
+}
