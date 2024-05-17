@@ -1,12 +1,26 @@
-.homeContainer {
+.home {
   display: flex;
-  padding-top: 10px;
-  gap: 12px;
+  height: calc(100vh - 70px);
+  padding: 8px;
 
   .homeContactLeft {
-    margin: 8px 1rem;
-    width: 285px;
+    position: relative;
+    min-width: 268px;
+    height: 100%;
+    overflow: hidden;
 
+    &:hover {
+      overflow: auto;
+    }
+
+    .homeCreateContactBtnBlock {
+      z-index: 1;
+      position: sticky;
+      padding-bottom: 2px;
+      top: 0;
+      width: 100%;
+      background: #f7fafc;
+    }
     .homeCreateContactBtn {
       display: flex;
       align-items: center;
@@ -23,6 +37,44 @@
       transition: all 0.3s ease;
     }
 
+    .modalCreateContact {
+      z-index: 1;
+      position: absolute;
+      top: 3.2rem;
+      left: 5px;
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      background: #ecf1f9;
+      border-radius: 5px;
+      box-shadow: 0 1px 5px 0;
+      width: 12.5rem;
+      height: 6rem;
+
+      .modalCreateContactItem {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 0 10px;
+        height: 45px;
+        font-size: 0.9rem;
+        color: #000000c2;
+        cursor: pointer;
+
+        &:hover {
+          background: #1f1f1f14;
+        }
+      }
+    }
+
+    .showModal {
+      display: flex;
+    }
+
+    .closeModal {
+      display: none;
+    }
+
     .homeContactType {
       .homeContactTypeItem {
         position: relative;
@@ -33,20 +85,22 @@
         border-radius: 999px;
         background: transparent;
         padding: 10px 1rem;
+        margin-right: 1.5rem;
         cursor: pointer;
 
         &:hover {
           background: #c2e7ff51;
         }
+      }
 
-        .personOutlinedHomeContact {
-          display: none;
-        }
-        .homeContactTotal {
-          position: absolute;
-          font-weight: normal;
-          right: 1rem;
-        }
+      .personOutlinedHomeContact {
+        display: none;
+      }
+
+      .homeContactTotal {
+        position: absolute;
+        font-weight: normal;
+        right: 1rem;
       }
 
       .homeContactTypeItem:first-child {
@@ -84,6 +138,7 @@
           border-radius: 999px;
           background: transparent;
           padding: 10px 1rem;
+          margin-right: 1.5rem;
           cursor: pointer;
 
           &:hover {
@@ -98,6 +153,7 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
+        margin-right: 1.5rem;
 
         .homeContactLibelleTitle {
           display: block;
@@ -130,6 +186,7 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
+        margin-right: 1.5rem;
 
         .homeContactLibelleIconeBlock {
           display: flex;
@@ -187,16 +244,82 @@
     }
   }
 
-  .homeContactRight {
-    width: calc(100% - 285px);
-    height: calc(100vh - 70px);
+  .homeContactRightEmpty {
+    display: flex;
+    width: 100%;
+    padding-left: 10px;
 
-    .homeContactBlock {
+    .homeContactContainer {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       background: #fff;
       border-radius: 24px;
-      margin-right: 1rem;
-      padding: 2rem;
-      height: 97%;
+      width: 100%;
+      height: 100%;
+      padding: 1.5rem;
+
+      .homeContactTitle {
+        position: absolute;
+        top: 1.5rem;
+        left: 1.5rem;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+
+        .homeContactTitleLabel {
+          font-size: 1.5rem;
+        }
+
+        .homeContactTotal {
+          font-size: 0.9rem;
+        }
+      }
+    }
+
+    .homeContactEmpty {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .homeContactEmptyTitle {
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+        font-size: 1rem;
+        color: #1f1f1f;
+      }
+
+      .homeContactEmptyImgBlock {
+        width: 200px;
+        height: 200px;
+
+        .homeContactEmptyImg {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .showModal {
+    display: flex;
+  }
+
+  .closeModal {
+    display: none;
+  }
+
+  .homeContactRightAdded {
+    display: none;
+    width: 100%;
+    padding-left: 10px;
+
+    .homeContactContainer {
+      background: #fff;
+      border-radius: 24px;
+      width: 100%;
+      height: 100%;
+      padding: 1.5rem;
 
       .homeContactTitle {
         display: flex;
@@ -212,108 +335,291 @@
         }
       }
 
-      .homeContactBlockCenter {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        height: 100%;
-
-        .homeContactEmpty {
+      .homeContactList {
+        .homeContactAddedTopBar {
           display: flex;
-          flex-direction: column;
           align-items: center;
-          gap: 2rem;
+          gap: 8px;
+          width: 100%;
+          height: 50px;
 
-          .homeContactEmptyTitle {
-            font-size: 1rem;
-            color: #1f1f1f;
+          .homeContactAddedTopBarItem {
+            font-size: 0.875rem;
+            font-weight: 600;
+          }
+          .homeContactAddedTopBarItem:nth-child(1) {
+            width: calc(36% - 160px);
+          }
+          .homeContactAddedTopBarItem:nth-child(2),
+          .homeContactAddedTopBarItem:nth-child(3),
+          .homeContactAddedTopBarItem:nth-child(4),
+          .homeContactAddedTopBarItem:nth-child(5) {
+            width: 16%;
+          }
+          .homeContactAddedTopBarItem:nth-child(6) {
+            display: flex;
+            justify-content: end;
+            width: 120px;
+          }
+
+          .homeContactAddedTopBarItemBlockIcons {
+            display: none;
+            align-items: center;
+
+            i {
+              padding: 10px;
+            }
           }
         }
 
-        .homeContactAdded {
-          width: 100%;
+        .homeContactAddedLabel {
+          font-size: 0.8rem;
+        }
 
-          .homeContactAddedTopBar {
+        .homeAllContact {
+          position: relative;
+
+          .drag_indicator {
+            align-items: center;
+            color: #c4c7c5;
+            transition: all 0.3s ease;
+
+            i {
+              display: none;
+
+              &:hover {
+                color: #5f6368;
+              }
+            }
+          }
+
+          .homeContactCreated {
             display: flex;
             align-items: center;
             gap: 8px;
+            margin: 0 4px;
+            border-radius: 5px;
+            width: 100%;
             height: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
 
-            .homeContactAddedTopBarItem:first-child {
-              width: calc(36% - 160px);
+            &:hover {
+              background: #0b57d014;
             }
-
-            .homeContactAddedTopBarItem:nth-child(2),
-            .homeContactAddedTopBarItem:nth-child(3),
-            .homeContactAddedTopBarItem:nth-child(4),
-            .homeContactAddedTopBarItem:nth-child(5) {
-              width: 16%;
-            }
-
-            .blockIcons {
+            &:hover .drag_indicator i {
               display: flex;
-              align-items: center;
+            }
+            &:hover .homeContactAddedTopBarItemBlockIcons {
+              display: flex;
+            }
+            &:hover .homeContactCreatedItem .accountImg {
+              display: none;
+            }
+            &:hover .homeContactCreatedItem .checkboxBlock {
+              display: flex;
+            }
+            .homeContactCreatedItem {
+              position: relative;
+              display: flex;
+              font-size: 0.875rem;
 
-              i {
-                display: flex;
-                align-items: center;
-                justify-content: center;
+              .checkboxBlock {
+                display: none;
+                background: transparent;
+                height: 36px;
+                width: 36px;
                 border-radius: 999px;
-                width: 40px;
-                height: 40px;
-                cursor: pointer;
                 transition: all 0.3s ease;
+                cursor: pointer;
 
                 &:hover {
                   background: #31363a1c;
                 }
+
+                .checkbox {
+                  position: absolute;
+                  top: 50%;
+                  left: 50%;
+                  transform: translate(-50%, -50%);
+                  width: 18px;
+                  height: 18px;
+                  cursor: pointer;
+                }
+              }
+              .accountImg {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 1.1rem;
+                font-weight: 500;
+                color: #fff;
+                background: #0189d2;
+                width: 100%;
+                height: 36px;
+                border-radius: 999px;
+                transition: all 0.3s ease;
               }
             }
-          }
-        }
-        
-        .homeContactCreated {
-          display: flex;
-          align-items: center;
-          display: flex;
-          gap: 8px;
-          height: 50px;
-          margin: 0 4px;
-          width: 100%;
 
-          .homeContactCreatedItem:first-child {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            width: calc(36% - 160px);
-          }
+            .homeContactCreatedItem:nth-child(1) {
+              width: 5px;
+            }
+            .homeContactCreatedItem:nth-child(2) {
+              width: 36px;
+            }
+            .homeContactCreatedItem:nth-child(3) {
+              width: calc(36% - 221px);
+            }
+            .homeContactCreatedItem:nth-child(4),
+            .homeContactCreatedItem:nth-child(5),
+            .homeContactCreatedItem:nth-child(6),
+            .homeContactCreatedItem:nth-child(7) {
+              width: 16%;
+            }
+            .homeContactCreatedItem:nth-child(8) {
+              display: flex;
+              justify-content: end;
+              width: 120px;
+            }
 
-          .homeContactCreatedItem:nth-child(2),
-          .homeContactCreatedItem:nth-child(3),
-          .homeContactCreatedItem:nth-child(4),
-          .homeContactCreatedItem:nth-child(5) {
-            width: 16%;
+            .homeContactAddedTopBarItemBlockIcons {
+              display: none;
+              align-items: center;
+
+              i {
+                padding: 10px;
+              }
+            }
           }
         }
       }
     }
 
-    .homeCreateContact {
-      display: none;
-    }
+    .homeContactEmpty {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
 
-    .homeCreateContact {
-      display: none;
+      .homeContactEmptyTitle {
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+        font-size: 1rem;
+        color: #1f1f1f;
+      }
+
+      .homeContactEmptyImgBlock {
+        width: 200px;
+        height: 200px;
+
+        .homeContactEmptyImg {
+          width: 100%;
+        }
+      }
     }
   }
-}
 
-.homeContactEmptyImgBlock {
-  width: 220px;
-  height: 220px;
+  .showModal {
+    display: flex;
+  }
 
-  .homeContactEmptyImg {
+  .closeModal {
+    display: none;
+  }
+
+  .homeCreateContact {
+    display: none;
     width: 100%;
+    height: 100%;
+    padding-left: 10px;
+
+    .homeCreateContactContainer {
+      position: relative;
+      background: #fff;
+      border-radius: 24px;
+      width: 100%;
+      height: 100%;
+      padding-bottom: 0;
+      overflow: auto;
+
+      .homeCreateContactTopBarBlock {
+        z-index: 1;
+        position: sticky;
+        top: 0;
+        padding: 2.5rem;
+        padding-bottom: 0;
+        background: #fff;
+        max-width: 620px;
+      }
+      .homeCreateContactBottom {
+        padding: 2.5rem;
+        padding-top: 1rem;
+      }
+      .homeCreateContactTopBar {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        justify-content: space-between;
+
+        .homeCreateContactTopBarItem:last-child {
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+
+          button {
+            background: #0b57d0;
+            padding: 0 20px;
+            height: 38px;
+            border: none;
+            border-radius: 999px;
+            color: #fff;
+            font-weight: 600;
+            cursor: pointer;
+          }
+        }
+      }
+
+      .homeCreateContactBlockImg {
+        position: relative;
+        margin-bottom: 2rem;
+        border-radius: 999px;
+        height: 150px;
+        width: 150px;
+
+        .homeCreateContactBlockImgItemImg {
+          width: 100%;
+          cursor: pointer;
+        }
+        .addButton {
+          position: absolute;
+          right: 0;
+          bottom: 0px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 40px;
+          width: 40px;
+          background: #0b57d0;
+          border-radius: 999px;
+          border: solid #fff;
+          color: #fff;
+          cursor: pointer;
+        }
+      }
+
+      .homeCreateContactAddLibelle {
+      }
+
+      .homeCreateContactForm {
+      }
+    }
+  }
+
+  .showModal {
+    display: flex;
+  }
+
+  .closeModal {
+    display: none;
   }
 }

@@ -1,266 +1,701 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      href="//ssl.gstatic.com/images/branding/product/2x/contacts_2022_64dp.png"
+      sizes="128x128"
+    />
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="//ssl.gstatic.com/images/branding/product/2x/contacts_2022_64dp.png" sizes="128x128">
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
 
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-    <link rel="stylesheet" href="./style/style.css">
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style/style.css" />
     <title>Google Contacts</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <header class="header">
-        <nav class="nav">
-            <div class="navLeft">
-                <span class="material-symbols-outlined"> menu </span>
-                <img class="navLeftLogo" src="https://www.gstatic.com/images/branding/product/1x/contacts_2022_48dp.png"
-                    alt="Logo contact" />
-                <span class="navLeftLabel">Contacts</span>
-            </div>
+      <nav class="nav">
+        <div class="navLeft">
+          <span class="material-symbols-outlined"> menu </span>
+          <img
+            class="navLeftLogo"
+            src="https://www.gstatic.com/images/branding/product/1x/contacts_2022_48dp.png"
+            alt="Logo contact"
+          />
+          <span class="navLeftLabel">Contacts</span>
+        </div>
 
-            <div class="navRight">
-                <div class="navCenter">
-                    <button class="navCenterSearchBtn">
-                        <span class="material-icons search"> search </span>
-                    </button>
-                    <input class="navCenterInput" type="text" placeholder="Rechercher" />
-                    <button class="navCenterCloseBtn">
-                        <span class="material-symbols-outlined close">
-                            close
-                        </span>
-                    </button>
-                </div>
+        <div class="navCenter">
+          <div class="navCenterSearch">
+            <form action="" class="navCenterSearchForm">
+              <button class="navCenterSearchBtn">
+                <span class="material-icons search"> search </span>
+              </button>
+              <input
+                class="navCenterInput"
+                type="text"
+                placeholder="Rechercher"
+              />
+              <button class="navCenterCloseBtn">
+                <span class="material-symbols-outlined close"> close </span>
+              </button>
+            </form>
+          </div>
+          <div class="navCenterIcons">
+            <span class="material-icons"> help_outline </span>
+            <span class="material-symbols-outlined settings"> settings </span>
+          </div>
+        </div>
 
-                <div class="navCompteSettings">
-                    <span class="material-icons"> help_outline </span>
-                    <span class="material-symbols-outlined settings"> settings </span>
-                    <span class="material-symbols-outlined"> apps </span>
-                    <span class="material-symbols-outlined"> account_circle </span>
-                </div>
-            </div>
-        </nav>
+        <div class="navCompteSettings">
+          <span class="material-symbols-outlined"> apps </span>
+          <span class="material-symbols-outlined"> account_circle </span>
+        </div>
+      </nav>
     </header>
 
-    <section id="home" class="home">
-        <div id="homeContainer" class="homeContainer">
-            <div id="homeContactLeft" class="homeContactLeft">
-                <span class="homeCreateContactBtn">
-                    <i class="material-icons" aria-hidden="true">add</i>
-                    Créer un contact
-                </span>
-
-                <ul class="homeContactType">
-                    <li class="homeContactTypeItem">
-                        <i class="material-icons" aria-hidden="true">person</i>
-                        <i class="material-symbols-outlined personOutlinedHomeContact"
-                            aria-hidden="true">person</i>Contacts
-                        <span class="homeContactTotal"></span>
-                    </li>
-                    <li class="homeContactTypeItem">
-                        <i class="material-icons" aria-hidden="true">history</i>Fréquents
-                    </li>
-                    <li class="homeContactTypeItem">
-                        <span class="material-symbols-outlined">archive </span>Autres
-                        contact
-                    </li>
-                </ul>
-
-                <div class="homeContactOthers">
-                    <span class="homeContactOthersTitle">Corriger et gérer</span>
-                    <ul class="homeContactOthersList">
-                        <li class="homeContactOthersItem">
-                            <i class="material-symbols-outlined" aria-hidden="true">handyman</i>Fusionner et
-                            corriger
-                        </li>
-                        <li class="homeContactOthersItem">
-                            <i class="material-symbols-outlined" aria-hidden="true">download</i>Importer
-                        </li>
-                        <li class="homeContactOthersItem">
-                            <i class="material-symbols-outlined" aria-hidden="true">delete</i>Corbeille
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="homeContactLibelle">
-                    <div class="homeContactLibelleTitleBlock">
-                        <span class="homeContactLibelleTitle">Libellés</span>
-                        <span class="homeContactAddLibelle">
-                            <i class="material-icons" aria-hidden="true">add</i>
-                        </span>
-                    </div>
-
-                    <ul id="homeContactLibelleList" class="homeContactLibelleList">
-                        <li id="fc9df8f2-329d-4d1a-b8f6-2ee03ea739dc" class="homeContactLibelleListItem">
-                            <div id="homeContactLibelleIconeBlock" class="homeContactLibelleIconeBlock"><span
-                                    class="material-icons">label</span>
-                                <span id="label:fc9df8f2-329d-4d1a-b8f6-2ee03ea739dc"
-                                    class="labelDescription">Bureau</span>
-                            </div>
-                            <div id="homeContactLibelleUpdate" class="homeContactLibelleUpdate">
-                                <div id="homeContactLibelleUpdateBlockLeft"
-                                    class="homeContactLibelleUpdateBlockLeft homeContactLibelleUpdateBlock">
-                                    <span
-                                        class="material-symbols-outlined homeContactLibelleEdit homeContactLibelleUpdateIcon">edit</span>
-                                </div>
-                                <div id="homeContactLibelleUpdateBlockRight"
-                                    class="homeContactLibelleUpdateBlockRight homeContactLibelleUpdateBlock">
-                                    <span
-                                        class="material-symbols-outlined homeContactLibelleDelete homeContactLibelleUpdateIcon">delete</span>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="homeContactRight">
-                <div class="homeContactBlock">
-                    <div class="homeContactTitle">
-                        <span class="homeContactTitleLabel">Contacts</span>
-                        <span class="homeContactTotal">(0)</span>
-                    </div>
-
-                    <div class="homeContactBlockCenter">
-                        <div class="homeContactEmpty">
-                            <div class="homeContactEmptyImgBlock">
-                                <img class="homeContactEmptyImg"
-                                    src="https://ssl.gstatic.com/social/contactsui/images/emptycontacts/emptycontacts_animation_cell4.png"
-                                    alt="" />
-                            </div>
-                            <p class="homeContactEmptyTitle">Aucun contact pour l'instant</p>
-                            <div class="homeContactEmptyBtn">
-                                <button type="button">
-                                    <i class="material-symbols-outlined" aria-hidden="true">person</i>Créer
-                                    un<br>contact
-                                </button>
-                                <button type="button">
-                                    <i class="material-symbols-outlined" aria-hidden="true">download</i>
-                                    Importer des <br>contacts
-                                </button>
-                            </div>
-                        </div>
-
-                        <div class="homeContactAdded">
-                            <ul class="homeContactAddedTopBar">
-                                <li class="homeContactAddedTopBarItem">Titre</li>
-                                <li class="homeContactAddedTopBarItem">E-mail</li>
-                                <li class="homeContactAddedTopBarItem">Numéro de téléphone</li>
-                                <li class="homeContactAddedTopBarItem">Fonction et entreprise</li>
-                                <li class="homeContactAddedTopBarItem">Libellés</li>
-                                <li class="homeContactAddedTopBarItem blockIcons">
-                                    <i class="material-icons" aria-hidden="true">print</i>
-                                    <i class="material-symbols-outlined" aria-hidden="true">upload</i>
-                                    <i class="material-symbols-outlined" aria-hidden="true">more_vert</i>
-                                </li>
-                            </ul>
-                            <hr><br>
-                            <span class="homeContactAddedLabel">Contacts</span>
-                        </div><br>
-
-                        <ul id="homeContactCreated" class="homeContactCreated">
-                            <li class="homeContactCreatedItem">
-                                <span class="material-symbols-outlined"> account_circle </span>Lionel Manassé
-                            </li>
-                            <li class="homeContactCreatedItem">lionelmutombo.mtb@gmail.com</li>
-                            <li class="homeContactCreatedItem">+243828378582</li>
-                            <li class="homeContactCreatedItem">Développeur, Présidence de la RDC</li>
-                            <li class="homeContactCreatedItem">
-                                <button class="homeContactCreatedAddLabel">Famille</button>
-                            </li>
-                            <li class="homeContactAddedTopBarItem blockIcons"></li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="homeCreateContact">
-                    <ul class="homeCreateContactTopBar">
-                        <li class="homeCreateContactTopBarItem">
-                            <i class="material-icons" aria-hidden="true">arrow_back</i>
-                        </li>
-                        <li class="homeCreateContactTopBarItem">
-                            <i class="material-icons" aria-hidden="true">star_outline</i>
-                            <button class="homeCreateContactTopBarItemBtn">Enregistrer</button>
-                        </li>
-                    </ul>
-
-                    <ul class="homeCreateContactBlockImg">
-                        <li class="homeCreateContactBlockImgItem">
-                            <img class="homeCreateContactBlockImgItemImg"
-                                src="https://www.gstatic.com/identity/boq/profilepicturepicker/photo_silhouette_e02a5f5deb3ffc173119a01bc9575490.png"
-                                alt="" />
-                        </li>
-                        <li class="homeCreateContactBlockImgItem addButton">
-                            <i class="addButtonIcon material-icons" aria-hidden="true">add</i>
-                        </li>
-                    </ul>
-
-                    <button class="homeCreateContactAddLibelle">
-                        <i class="addLibelleIcon material-icons" aria-hidden="true">add</i>
-                        <span class="homeCreateContactAddLibelleLabel">Libellé</span>
-                    </button>
-
-                    <form action="" class="homeCreateContactForm">
-                        <div class="homeCreateContactFormPrenom">
-                            <i class="material-symbols-outlined" aria-hidden="true">person</i>
-                            <input type="text" placeholder="Prénom">
-                        </div>
-
-                        <div class="homeCreateContactFormNom">
-                            <input type="text" placeholder="Nom">
-                        </div>
-
-                        <div class="homeCreateContactFormEntreprise">
-                            <i class="material-icons" aria-hidden="true">domain</i>
-                            <input type="text" placeholder="Entreprise">
-                        </div>
-                        <div class="homeCreateContactFormFonction">
-                            <input type="text" placeholder="Fonction">
-                        </div>
-
-                        <div class="homeCreateContactFormEmail">
-                            <i class="material-symbols-outlined" aria-hidden="true">mail</i>
-                            <input type="text" placeholder="E-mail">
-                        </div>
-
-                        <div class="addMailBtn">
-                            <button class="homeCreateContactFormBtnAddMail">
-                                <i class="material-icons" aria-hidden="true">add</i>
-                                Ajouter une adresse e-mail
-                            </button>
-                        </div>
-
-                        <div class="homeCreateContactFormTelephone">
-                            <i class="material-icons" aria-hidden="true">call</i>
-                            <select name="" id="">
-                                <option value=""></option>
-                            </select>
-                            <input type="text" placeholder="Téléphone">
-                        </div>
-
-                        <div class="addPhoneNumBtn">
-                            <button class="homeCreateContactFormBtnAddPhoneNum">
-                                <i class="material-icons" aria-hidden="true">add</i>
-                                Ajouter un numéro de téléphone
-                            </button>
-                        </div>
-
-                        <div class="addAdressBtn">
-                            <button class="homeCreateContactFormBtnAddAdress">
-                                <i class="material-icons" aria-hidden="true">location_on</i>
-                                Ajouter une adresse
-                            </button>
-                        </div>
-                    </form>
-                </div>
-            </div>
+    <section class="home">
+      <div id="homeContactLeft" class="homeContactLeft">
+        <div class="homeCreateContactBtnBlock">
+          <span id="homeCreateContactBtn" class="homeCreateContactBtn">
+            <i class="material-icons" aria-hidden="true">add</i>
+            Créer un contact
+          </span>
         </div>
-    </section>
-</body>
 
+        <ul id="modalCreateContact" class="modalCreateContact">
+          <li id="modalCreateContactItemCreateContact" class="modalCreateContactItem">
+            <i class="material-symbols-outlined">person</i>
+            <span class="">Créer un contact</span>
+          </li>
+          <li class="modalCreateContactItem">
+            <i class="material-symbols-outlined">group</i>
+            <span class="">Créer plusieurs contacts</span>
+          </li>
+        </ul>
+
+        <ul class="homeContactType">
+          <li id="homeContactTypeItemShozContact" class="homeContactTypeItem">
+            <i class="material-icons" aria-hidden="true">person</i>
+            <i
+              class="material-symbols-outlined personOutlinedHomeContact"
+              aria-hidden="true"
+              >person</i
+            >Contacts
+            <span class="homeContactTotal"></span>
+          </li>
+          <li class="homeContactTypeItem">
+            <i class="material-icons" aria-hidden="true">history</i>Fréquents
+          </li>
+          <li class="homeContactTypeItem">
+            <span class="material-symbols-outlined">archive </span>Autres
+            contact
+          </li>
+        </ul>
+
+        <div class="homeContactOthers">
+          <span class="homeContactOthersTitle">Corriger et gérer</span>
+          <ul class="homeContactOthersList">
+            <li class="homeContactOthersItem">
+              <i class="material-symbols-outlined" aria-hidden="true"
+                >handyman</i
+              >Fusionner et corriger
+            </li>
+            <li class="homeContactOthersItem">
+              <i class="material-symbols-outlined" aria-hidden="true"
+                >download</i
+              >Importer
+            </li>
+            <li id="homeContactOthersItemCorbeille" class="homeContactOthersItem">
+              <i class="material-symbols-outlined" aria-hidden="true">delete</i
+              >Corbeille
+            </li>
+          </ul>
+        </div>
+
+        <div class="homeContactLibelle">
+          <div class="homeContactLibelleTitleBlock">
+            <span class="homeContactLibelleTitle">Libellés</span>
+            <span id="homeContactAddLibelle" class="homeContactAddLibelle">
+              <i class="material-icons" aria-hidden="true">add</i>
+            </span>
+          </div>
+
+          <ul id="homeContactLibelleList" class="homeContactLibelleList">
+            <li
+              id="fc9df8f2-329d-4d1a-b8f6-2ee03ea739dc"
+              class="homeContactLibelleListItem"
+            >
+              <div
+                id="homeContactLibelleIconeBlock"
+                class="homeContactLibelleIconeBlock"
+              >
+                <span class="material-icons">label</span>
+                <span
+                  id="label:fc9df8f2-329d-4d1a-b8f6-2ee03ea739dc"
+                  class="labelDescription"
+                  >Bureau</span
+                >
+              </div>
+              <div
+                id="homeContactLibelleUpdate"
+                class="homeContactLibelleUpdate"
+              >
+                <div
+                  id="homeContactLibelleUpdateBlockLeft"
+                  class="homeContactLibelleUpdateBlockLeft homeContactLibelleUpdateBlock"
+                >
+                  <span
+                    class="material-symbols-outlined homeContactLibelleEdit homeContactLibelleUpdateIcon"
+                    >edit</span
+                  >
+                </div>
+                <div
+                  id="homeContactLibelleUpdateBlockRight"
+                  class="homeContactLibelleUpdateBlockRight homeContactLibelleUpdateBlock"
+                >
+                  <span
+                    class="material-symbols-outlined homeContactLibelleDelete homeContactLibelleUpdateIcon"
+                    >delete</span
+                  >
+                </div>
+              </div>
+            </li>
+            <li
+              id="fc9df8f2-329d-4d1a-b8f6-2ee03ea739dc"
+              class="homeContactLibelleListItem"
+            >
+              <div
+                id="homeContactLibelleIconeBlock"
+                class="homeContactLibelleIconeBlock"
+              >
+                <span class="material-icons">label</span>
+                <span
+                  id="label:fc9df8f2-329d-4d1a-b8f6-2ee03ea739dc"
+                  class="labelDescription"
+                  >Bureau</span
+                >
+              </div>
+              <div
+                id="homeContactLibelleUpdate"
+                class="homeContactLibelleUpdate"
+              >
+                <div
+                  id="homeContactLibelleUpdateBlockLeft"
+                  class="homeContactLibelleUpdateBlockLeft homeContactLibelleUpdateBlock"
+                >
+                  <span
+                    class="material-symbols-outlined homeContactLibelleEdit homeContactLibelleUpdateIcon"
+                    >edit</span
+                  >
+                </div>
+                <div
+                  id="homeContactLibelleUpdateBlockRight"
+                  class="homeContactLibelleUpdateBlockRight homeContactLibelleUpdateBlock"
+                >
+                  <span
+                    class="material-symbols-outlined homeContactLibelleDelete homeContactLibelleUpdateIcon"
+                    >delete</span
+                  >
+                </div>
+              </div>
+            </li>
+            <li
+              id="fc9df8f2-329d-4d1a-b8f6-2ee03ea739dc"
+              class="homeContactLibelleListItem"
+            >
+              <div
+                id="homeContactLibelleIconeBlock"
+                class="homeContactLibelleIconeBlock"
+              >
+                <span class="material-icons">label</span>
+                <span
+                  id="label:fc9df8f2-329d-4d1a-b8f6-2ee03ea739dc"
+                  class="labelDescription"
+                  >Bureau</span
+                >
+              </div>
+              <div
+                id="homeContactLibelleUpdate"
+                class="homeContactLibelleUpdate"
+              >
+                <div
+                  id="homeContactLibelleUpdateBlockLeft"
+                  class="homeContactLibelleUpdateBlockLeft homeContactLibelleUpdateBlock"
+                >
+                  <span
+                    class="material-symbols-outlined homeContactLibelleEdit homeContactLibelleUpdateIcon"
+                    >edit</span
+                  >
+                </div>
+                <div
+                  id="homeContactLibelleUpdateBlockRight"
+                  class="homeContactLibelleUpdateBlockRight homeContactLibelleUpdateBlock"
+                >
+                  <span
+                    class="material-symbols-outlined homeContactLibelleDelete homeContactLibelleUpdateIcon"
+                    >delete</span
+                  >
+                </div>
+              </div>
+            </li>
+            <li
+              id="fc9df8f2-329d-4d1a-b8f6-2ee03ea739dc"
+              class="homeContactLibelleListItem"
+            >
+              <div
+                id="homeContactLibelleIconeBlock"
+                class="homeContactLibelleIconeBlock"
+              >
+                <span class="material-icons">label</span>
+                <span
+                  id="label:fc9df8f2-329d-4d1a-b8f6-2ee03ea739dc"
+                  class="labelDescription"
+                  >Bureau</span
+                >
+              </div>
+              <div
+                id="homeContactLibelleUpdate"
+                class="homeContactLibelleUpdate"
+              >
+                <div
+                  id="homeContactLibelleUpdateBlockLeft"
+                  class="homeContactLibelleUpdateBlockLeft homeContactLibelleUpdateBlock"
+                >
+                  <span
+                    class="material-symbols-outlined homeContactLibelleEdit homeContactLibelleUpdateIcon"
+                    >edit</span
+                  >
+                </div>
+                <div
+                  id="homeContactLibelleUpdateBlockRight"
+                  class="homeContactLibelleUpdateBlockRight homeContactLibelleUpdateBlock"
+                >
+                  <span
+                    class="material-symbols-outlined homeContactLibelleDelete homeContactLibelleUpdateIcon"
+                    >delete</span
+                  >
+                </div>
+              </div>
+            </li>
+            <li
+              id="fc9df8f2-329d-4d1a-b8f6-2ee03ea739dc"
+              class="homeContactLibelleListItem"
+            >
+              <div
+                id="homeContactLibelleIconeBlock"
+                class="homeContactLibelleIconeBlock"
+              >
+                <span class="material-icons">label</span>
+                <span
+                  id="label:fc9df8f2-329d-4d1a-b8f6-2ee03ea739dc"
+                  class="labelDescription"
+                  >Bureau</span
+                >
+              </div>
+              <div
+                id="homeContactLibelleUpdate"
+                class="homeContactLibelleUpdate"
+              >
+                <div
+                  id="homeContactLibelleUpdateBlockLeft"
+                  class="homeContactLibelleUpdateBlockLeft homeContactLibelleUpdateBlock"
+                >
+                  <span
+                    class="material-symbols-outlined homeContactLibelleEdit homeContactLibelleUpdateIcon"
+                    >edit</span
+                  >
+                </div>
+                <div
+                  id="homeContactLibelleUpdateBlockRight"
+                  class="homeContactLibelleUpdateBlockRight homeContactLibelleUpdateBlock"
+                >
+                  <span
+                    class="material-symbols-outlined homeContactLibelleDelete homeContactLibelleUpdateIcon"
+                    >delete</span
+                  >
+                </div>
+              </div>
+            </li>
+            <li
+              id="fc9df8f2-329d-4d1a-b8f6-2ee03ea739dc"
+              class="homeContactLibelleListItem"
+            >
+              <div
+                id="homeContactLibelleIconeBlock"
+                class="homeContactLibelleIconeBlock"
+              >
+                <span class="material-icons">label</span>
+                <span
+                  id="label:fc9df8f2-329d-4d1a-b8f6-2ee03ea739dc"
+                  class="labelDescription"
+                  >Bureau</span
+                >
+              </div>
+              <div
+                id="homeContactLibelleUpdate"
+                class="homeContactLibelleUpdate"
+              >
+                <div
+                  id="homeContactLibelleUpdateBlockLeft"
+                  class="homeContactLibelleUpdateBlockLeft homeContactLibelleUpdateBlock"
+                >
+                  <span
+                    class="material-symbols-outlined homeContactLibelleEdit homeContactLibelleUpdateIcon"
+                    >edit</span
+                  >
+                </div>
+                <div
+                  id="homeContactLibelleUpdateBlockRight"
+                  class="homeContactLibelleUpdateBlockRight homeContactLibelleUpdateBlock"
+                >
+                  <span
+                    class="material-symbols-outlined homeContactLibelleDelete homeContactLibelleUpdateIcon"
+                    >delete</span
+                  >
+                </div>
+              </div>
+            </li>
+            <li
+              id="fc9df8f2-329d-4d1a-b8f6-2ee03ea739dc"
+              class="homeContactLibelleListItem"
+            >
+              <div
+                id="homeContactLibelleIconeBlock"
+                class="homeContactLibelleIconeBlock"
+              >
+                <span class="material-icons">label</span>
+                <span
+                  id="label:fc9df8f2-329d-4d1a-b8f6-2ee03ea739dc"
+                  class="labelDescription"
+                  >Bureau</span
+                >
+              </div>
+              <div
+                id="homeContactLibelleUpdate"
+                class="homeContactLibelleUpdate"
+              >
+                <div
+                  id="homeContactLibelleUpdateBlockLeft"
+                  class="homeContactLibelleUpdateBlockLeft homeContactLibelleUpdateBlock"
+                >
+                  <span
+                    class="material-symbols-outlined homeContactLibelleEdit homeContactLibelleUpdateIcon"
+                    >edit</span
+                  >
+                </div>
+                <div
+                  id="homeContactLibelleUpdateBlockRight"
+                  class="homeContactLibelleUpdateBlockRight homeContactLibelleUpdateBlock"
+                >
+                  <span
+                    class="material-symbols-outlined homeContactLibelleDelete homeContactLibelleUpdateIcon"
+                    >delete</span
+                  >
+                </div>
+              </div>
+            </li>
+            <li
+              id="fc9df8f2-329d-4d1a-b8f6-2ee03ea739dc"
+              class="homeContactLibelleListItem"
+            >
+              <div
+                id="homeContactLibelleIconeBlock"
+                class="homeContactLibelleIconeBlock"
+              >
+                <span class="material-icons">label</span>
+                <span
+                  id="label:fc9df8f2-329d-4d1a-b8f6-2ee03ea739dc"
+                  class="labelDescription"
+                  >Bureau</span
+                >
+              </div>
+              <div
+                id="homeContactLibelleUpdate"
+                class="homeContactLibelleUpdate"
+              >
+                <div
+                  id="homeContactLibelleUpdateBlockLeft"
+                  class="homeContactLibelleUpdateBlockLeft homeContactLibelleUpdateBlock"
+                >
+                  <span
+                    class="material-symbols-outlined homeContactLibelleEdit homeContactLibelleUpdateIcon"
+                    >edit</span
+                  >
+                </div>
+                <div
+                  id="homeContactLibelleUpdateBlockRight"
+                  class="homeContactLibelleUpdateBlockRight homeContactLibelleUpdateBlock"
+                >
+                  <span
+                    class="material-symbols-outlined homeContactLibelleDelete homeContactLibelleUpdateIcon"
+                    >delete</span
+                  >
+                </div>
+              </div>
+            </li>
+            <li
+              id="fc9df8f2-329d-4d1a-b8f6-2ee03ea739dc"
+              class="homeContactLibelleListItem"
+            >
+              <div
+                id="homeContactLibelleIconeBlock"
+                class="homeContactLibelleIconeBlock"
+              >
+                <span class="material-icons">label</span>
+                <span
+                  id="label:fc9df8f2-329d-4d1a-b8f6-2ee03ea739dc"
+                  class="labelDescription"
+                  >Bureau</span
+                >
+              </div>
+              <div
+                id="homeContactLibelleUpdate"
+                class="homeContactLibelleUpdate"
+              >
+                <div
+                  id="homeContactLibelleUpdateBlockLeft"
+                  class="homeContactLibelleUpdateBlockLeft homeContactLibelleUpdateBlock"
+                >
+                  <span
+                    class="material-symbols-outlined homeContactLibelleEdit homeContactLibelleUpdateIcon"
+                    >edit</span
+                  >
+                </div>
+                <div
+                  id="homeContactLibelleUpdateBlockRight"
+                  class="homeContactLibelleUpdateBlockRight homeContactLibelleUpdateBlock"
+                >
+                  <span
+                    class="material-symbols-outlined homeContactLibelleDelete homeContactLibelleUpdateIcon"
+                    >delete</span
+                  >
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div id="homeContactRightEmpty" class="homeContactRightEmpty">
+        <div class="homeContactContainer">
+          <div class="homeContactTitle">
+            <span class="homeContactTitleLabel">Contacts</span>
+            <span class="homeContactTotal">(0)</span>
+          </div>
+
+          <div id="homeContactEmpty" class="homeContactEmpty">
+            <div class="homeContactEmptyImgBlock">
+              <img
+                class="homeContactEmptyImg"
+                src="https://ssl.gstatic.com/social/contactsui/images/emptycontacts/emptycontacts_animation_cell4.png"
+                alt=""
+              />
+            </div>
+            <p class="homeContactEmptyTitle">Aucun contact pour l'instant</p>
+            <div class="homeContactEmptyBtn">
+              <button id="homeContactEmptyCreateBtn" type="button">
+                <i class="material-symbols-outlined" aria-hidden="true"
+                  >person</i
+                >Créer un<br />contact
+              </button>
+              <button id="homeContactEmptyImportBtn" type="button">
+                <i class="material-symbols-outlined" aria-hidden="true"
+                  >download</i
+                >
+                Importer des <br />contacts
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="homeContactRightAdded" class="homeContactRightAdded">
+        <div class="homeContactContainer">
+          <div class="homeContactTitle">
+            <span class="homeContactTitleLabel">Contacts</span>
+            <span class="homeContactTotal">(0)</span>
+          </div>
+
+          <div class="homeContactList">
+            <ul class="homeContactAddedTopBar">
+              <li class="homeContactAddedTopBarItem">Titre</li>
+              <li class="homeContactAddedTopBarItem">E-mail</li>
+              <li class="homeContactAddedTopBarItem">Numéro de téléphone</li>
+              <li class="homeContactAddedTopBarItem">Fonction et entreprise</li>
+              <li class="homeContactAddedTopBarItem">Libellés</li>
+              <li
+                class="homeContactAddedTopBarItem homeContactAddedTopBarItemBlockIcons"
+              >
+                <i class="material-icons" aria-hidden="true">print</i>
+                <i class="material-symbols-outlined" aria-hidden="true"
+                  >upload</i
+                >
+                <i class="material-symbols-outlined" aria-hidden="true"
+                  >more_vert</i
+                >
+              </li>
+            </ul>
+            <hr />
+            <br />
+            <span class="homeContactAddedLabel">Contacts</span>
+
+            <div class="homeAllContact">
+              <ul id="homeContactCreated" class="homeContactCreated">
+                <li class="homeContactCreatedItem drag_indicator">
+                  <i class="material-icons" aria-hidden="true"
+                    >drag_indicator</i
+                  >
+                </li>
+                <li class="homeContactCreatedItem">
+                  <div class="checkboxBlock">
+                    <input class="checkbox" type="checkbox" />
+                  </div>
+                  <span class="accountImg">A</span>
+                </li>
+                <li class="homeContactCreatedItem">Lionel Manassé</li>
+                <li class="homeContactCreatedItem">
+                  lionelmutombo.mtb@gmail.com
+                </li>
+                <li class="homeContactCreatedItem">+243828378582</li>
+                <li class="homeContactCreatedItem">
+                  Développeur, Présidence de la RDC
+                </li>
+                <li class="homeContactCreatedItem">
+                  <button class="homeContactCreatedAddLabel">Famille</button>
+                </li>
+                <li
+                  class="homeContactAddedTopBarItem homeContactAddedTopBarItemBlockIcons"
+                >
+                  <i class="material-icons" aria-hidden="true">star_outline</i>
+                  <i class="material-symbols-outlined" aria-hidden="true"
+                    >edit</i
+                  >
+                  <i class="material-icons" aria-hidden="true">more_vert</i>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="homeCreateContact" class="homeCreateContact">
+        <div class="homeCreateContactContainer">
+          <div class="homeCreateContactTopBarBlock">
+            <ul class="homeCreateContactTopBar">
+              <li class="homeCreateContactTopBarItem">
+                <i class="material-icons" aria-hidden="true">arrow_back</i>
+              </li>
+              <li class="homeCreateContactTopBarItem">
+                <i class="material-icons" aria-hidden="true">star_outline</i>
+                <button class="homeCreateContactTopBarItemBtn">
+                  Enregistrer
+                </button>
+              </li>
+            </ul>
+          </div>
+
+          <div class="homeCreateContactBottom">
+            <ul class="homeCreateContactBlockImg">
+              <li class="homeCreateContactBlockImgItem">
+                <img
+                  class="homeCreateContactBlockImgItemImg"
+                  src="https://www.gstatic.com/identity/boq/profilepicturepicker/photo_silhouette_e02a5f5deb3ffc173119a01bc9575490.png"
+                  alt=""
+                />
+              </li>
+              <li class="homeCreateContactBlockImgItem addButton">
+                <i class="addButtonIcon material-icons" aria-hidden="true"
+                  >add</i
+                >
+              </li>
+            </ul>
+
+            <button class="homeCreateContactAddLibelle">
+              <i class="addLibelleIcon material-icons" aria-hidden="true"
+                >add</i
+              >
+              <span class="homeCreateContactAddLibelleLabel">Libellé</span>
+            </button>
+
+            <form action="" class="homeCreateContactForm">
+              <div class="homeCreateContactFormPrenom">
+                <i class="material-symbols-outlined icons" aria-hidden="true"
+                  >person</i
+                >
+                <input type="text" placeholder="Prénom" />
+              </div>
+
+              <div class="homeCreateContactFormNom">
+                <input type="text" placeholder="Nom" />
+              </div>
+
+              <div class="homeCreateContactFormEntreprise">
+                <i class="material-icons icons" aria-hidden="true">domain</i>
+                <input type="text" placeholder="Entreprise" />
+              </div>
+              <div class="homeCreateContactFormFonction">
+                <input type="text" placeholder="Fonction" />
+              </div>
+
+              <div class="homeCreateContactFormEmail">
+                <i class="material-symbols-outlined icons" aria-hidden="true"
+                  >mail</i
+                >
+                <input type="text" placeholder="E-mail" />
+              </div>
+
+              <div class="addMailBtn">
+                <button class="homeCreateContactFormBtnAddMail">
+                  <i class="material-icons" aria-hidden="true">add</i>
+                  Ajouter une adresse e-mail
+                </button>
+              </div>
+
+              <div class="homeCreateContactFormTelephone">
+                <i class="material-icons icons" aria-hidden="true">call</i>
+                <input
+                  id="phone"
+                  class="telephone"
+                  type="text"
+                  placeholder="Téléphone"
+                />
+              </div>
+
+              <div class="addPhoneNumBtn">
+                <button class="homeCreateContactFormBtnAddPhoneNum">
+                  <i class="material-icons" aria-hidden="true">add</i>
+                  Ajouter un numéro de téléphone
+                </button>
+              </div>
+
+              <div class="addAdressBtn">
+                <button class="homeCreateContactFormBtnAddAdress">
+                  <i class="material-icons" aria-hidden="true">location_on</i>
+                  Ajouter une adresse
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="./js/intlTelInput.js"></script>
+    <script src="./js/index.js"></script>
+    <script>
+      const input = document.getElementById("phone");
+      window.intlTelInput(input, {});
+    </script>
+  </body>
 </html>
