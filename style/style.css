@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.cdnfonts.com/css/google-sans");
 @import url("https://fonts.googleapis.com/css2?family=Material+Icons");
 * {
@@ -450,14 +451,11 @@ body {
 .home .homeContactRightEmpty .homeContactEmpty .homeContactEmptyImgBlock .homeContactEmptyImg {
   width: 100%;
 }
-.home .showModal {
-  display: flex;
-}
 .home .closeModal {
   display: none;
 }
 .home .homeContactRightAdded {
-  display: none;
+  display: flex;
   width: 100%;
   padding-left: 10px;
 }
@@ -499,6 +497,9 @@ body {
 .home .homeContactRightAdded .homeContactContainer .homeContactList .homeContactAddedTopBar .homeContactAddedTopBarItem:nth-child(5) {
   width: 16%;
 }
+.home .homeContactRightAdded .homeContactContainer .homeContactList .homeContactAddedTopBar .homeContactAddedTopBarItem:nth-child(5) {
+  display: none;
+}
 .home .homeContactRightAdded .homeContactContainer .homeContactList .homeContactAddedTopBar .homeContactAddedTopBarItem:nth-child(6) {
   display: flex;
   justify-content: end;
@@ -523,7 +524,7 @@ body {
   transition: all 0.3s ease;
 }
 .home .homeContactRightAdded .homeContactContainer .homeContactList .homeAllContact .drag_indicator i {
-  display: none;
+  opacity: 0;
 }
 .home .homeContactRightAdded .homeContactContainer .homeContactList .homeAllContact .drag_indicator i:hover {
   color: #5f6368;
@@ -543,16 +544,16 @@ body {
   background: rgba(11, 87, 208, 0.0784313725);
 }
 .home .homeContactRightAdded .homeContactContainer .homeContactList .homeAllContact .homeContactCreated:hover .drag_indicator i {
-  display: flex;
+  opacity: 1;
 }
 .home .homeContactRightAdded .homeContactContainer .homeContactList .homeAllContact .homeContactCreated:hover .homeContactAddedTopBarItemBlockIcons {
-  display: flex;
+  opacity: 1;
 }
 .home .homeContactRightAdded .homeContactContainer .homeContactList .homeAllContact .homeContactCreated:hover .homeContactCreatedItem .accountImg {
-  display: none;
+  opacity: 0;
 }
 .home .homeContactRightAdded .homeContactContainer .homeContactList .homeAllContact .homeContactCreated:hover .homeContactCreatedItem .checkboxBlock {
-  display: flex;
+  opacity: 1;
 }
 .home .homeContactRightAdded .homeContactContainer .homeContactList .homeAllContact .homeContactCreated .homeContactCreatedItem {
   position: relative;
@@ -560,10 +561,12 @@ body {
   font-size: 0.875rem;
 }
 .home .homeContactRightAdded .homeContactContainer .homeContactList .homeAllContact .homeContactCreated .homeContactCreatedItem .checkboxBlock {
-  display: none;
+  z-index: 1;
+  position: absolute;
+  opacity: 0;
   background: transparent;
-  height: 36px;
-  width: 36px;
+  height: 35px;
+  width: 35px;
   border-radius: 999px;
   transition: all 0.3s ease;
   cursor: pointer;
@@ -588,8 +591,8 @@ body {
   font-weight: 500;
   color: #fff;
   background: #0189d2;
-  width: 100%;
-  height: 36px;
+  width: 35px;
+  height: 35px;
   border-radius: 999px;
   transition: all 0.3s ease;
 }
@@ -606,6 +609,7 @@ body {
 .home .homeContactRightAdded .homeContactContainer .homeContactList .homeAllContact .homeContactCreated .homeContactCreatedItem:nth-child(5),
 .home .homeContactRightAdded .homeContactContainer .homeContactList .homeAllContact .homeContactCreated .homeContactCreatedItem:nth-child(6),
 .home .homeContactRightAdded .homeContactContainer .homeContactList .homeAllContact .homeContactCreated .homeContactCreatedItem:nth-child(7) {
+  display: block;
   width: 16%;
 }
 .home .homeContactRightAdded .homeContactContainer .homeContactList .homeAllContact .homeContactCreated .homeContactCreatedItem:nth-child(8) {
@@ -613,12 +617,36 @@ body {
   justify-content: end;
   width: 120px;
 }
-.home .homeContactRightAdded .homeContactContainer .homeContactList .homeAllContact .homeContactCreated .homeContactAddedTopBarItemBlockIcons {
+.home .homeContactRightAdded .homeContactContainer .homeContactList .homeAllContact .homeContactCreated .homeContactCreatedItem:nth-child(7) {
   display: none;
+}
+.home .homeContactRightAdded .homeContactContainer .homeContactList .homeAllContact .homeContactCreated .homeContactCreatedItem:nth-child(4),
+.home .homeContactRightAdded .homeContactContainer .homeContactList .homeAllContact .homeContactCreated .homeContactCreatedItem:nth-child(6) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.home .homeContactRightAdded .homeContactContainer .homeContactList .homeAllContact .homeContactCreated .homeContactAddedTopBarItemBlockIcons {
+  opacity: 0;
   align-items: center;
 }
 .home .homeContactRightAdded .homeContactContainer .homeContactList .homeAllContact .homeContactCreated .homeContactAddedTopBarItemBlockIcons i {
   padding: 10px;
+}
+.home .homeContactRightAdded .homeContactContainer .homeContactList .homeAllContact .homeContactChecked {
+  background: rgba(11, 87, 208, 0.0784313725);
+}
+.home .homeContactRightAdded .homeContactContainer .homeContactList .homeAllContact .homeContactChecked .drag_indicator i {
+  opacity: 1;
+}
+.home .homeContactRightAdded .homeContactContainer .homeContactList .homeAllContact .homeContactChecked .homeContactAddedTopBarItemBlockIcons {
+  opacity: 1;
+}
+.home .homeContactRightAdded .homeContactContainer .homeContactList .homeAllContact .homeContactChecked .homeContactCreatedItem .accountImg {
+  opacity: 0;
+}
+.home .homeContactRightAdded .homeContactContainer .homeContactList .homeAllContact .homeContactChecked .homeContactCreatedItem .checkboxBlock {
+  opacity: 1;
 }
 .home .homeContactRightAdded .homeContactEmpty {
   display: flex;
@@ -638,14 +666,11 @@ body {
 .home .homeContactRightAdded .homeContactEmpty .homeContactEmptyImgBlock .homeContactEmptyImg {
   width: 100%;
 }
-.home .showModal {
-  display: flex;
-}
 .home .closeModal {
   display: none;
 }
 .home .homeCreateContact {
-  display: none;
+  display: flex;
   width: 100%;
   height: 100%;
   padding-left: 10px;
@@ -719,11 +744,17 @@ body {
   color: #fff;
   cursor: pointer;
 }
-.home .showModal {
-  display: flex;
-}
 .home .closeModal {
   display: none;
+}
+
+.overflow-text {
+  position: absolute;
+  top: 0;
+  width: 150px; /* Largeur fixe ou maximale */
+  white-space: nowrap; /* Empêche le texte de se retourner à la ligne */
+  overflow: hidden; /* Cache le contenu dépassant */
+  text-overflow: ellipsis; /* Remplace le texte dépassant par des points de suspension */
 }
 
 .iti {

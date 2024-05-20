@@ -301,16 +301,12 @@
     }
   }
 
-  .showModal {
-    display: flex;
-  }
-
   .closeModal {
     display: none;
   }
 
   .homeContactRightAdded {
-    display: none;
+    display: flex;
     width: 100%;
     padding-left: 10px;
 
@@ -356,6 +352,11 @@
           .homeContactAddedTopBarItem:nth-child(5) {
             width: 16%;
           }
+
+          .homeContactAddedTopBarItem:nth-child(5) {
+            display: none;
+          }
+
           .homeContactAddedTopBarItem:nth-child(6) {
             display: flex;
             justify-content: end;
@@ -385,7 +386,8 @@
             transition: all 0.3s ease;
 
             i {
-              display: none;
+              // display: none;
+              opacity: 0;
 
               &:hover {
                 color: #5f6368;
@@ -408,16 +410,16 @@
               background: #0b57d014;
             }
             &:hover .drag_indicator i {
-              display: flex;
+              opacity: 1;
             }
             &:hover .homeContactAddedTopBarItemBlockIcons {
-              display: flex;
+              opacity: 1;
             }
             &:hover .homeContactCreatedItem .accountImg {
-              display: none;
+              opacity: 0;
             }
             &:hover .homeContactCreatedItem .checkboxBlock {
-              display: flex;
+              opacity: 1;
             }
             .homeContactCreatedItem {
               position: relative;
@@ -425,10 +427,12 @@
               font-size: 0.875rem;
 
               .checkboxBlock {
-                display: none;
+                z-index: 1;
+                position: absolute;
+                opacity: 0;
                 background: transparent;
-                height: 36px;
-                width: 36px;
+                height: 35px;
+                width: 35px;
                 border-radius: 999px;
                 transition: all 0.3s ease;
                 cursor: pointer;
@@ -455,13 +459,15 @@
                 font-weight: 500;
                 color: #fff;
                 background: #0189d2;
-                width: 100%;
-                height: 36px;
+                width: 35px;
+                height: 35px;
                 border-radius: 999px;
                 transition: all 0.3s ease;
               }
             }
 
+            .homeContactCreatedItem {
+            }
             .homeContactCreatedItem:nth-child(1) {
               width: 5px;
             }
@@ -475,6 +481,7 @@
             .homeContactCreatedItem:nth-child(5),
             .homeContactCreatedItem:nth-child(6),
             .homeContactCreatedItem:nth-child(7) {
+              display: block;
               width: 16%;
             }
             .homeContactCreatedItem:nth-child(8) {
@@ -483,13 +490,42 @@
               width: 120px;
             }
 
-            .homeContactAddedTopBarItemBlockIcons {
+            .homeContactCreatedItem:nth-child(7) {
               display: none;
+            }
+
+            .homeContactCreatedItem:nth-child(4),
+            .homeContactCreatedItem:nth-child(6) {
+              overflow: hidden;
+              text-overflow: ellipsis;
+              white-space: nowrap;
+            }
+
+            .homeContactAddedTopBarItemBlockIcons {
+              // display: none;
+              opacity: 0;
               align-items: center;
 
               i {
                 padding: 10px;
               }
+            }
+          }
+
+          .homeContactChecked {
+            background: #0b57d014;
+
+            .drag_indicator i {
+              opacity: 1;
+            }
+            .homeContactAddedTopBarItemBlockIcons {
+              opacity: 1;
+            }
+            .homeContactCreatedItem .accountImg {
+              opacity: 0;
+            }
+            .homeContactCreatedItem .checkboxBlock {
+              opacity: 1;
             }
           }
         }
@@ -519,16 +555,12 @@
     }
   }
 
-  .showModal {
-    display: flex;
-  }
-
   .closeModal {
     display: none;
   }
 
   .homeCreateContact {
-    display: none;
+    display: flex;
     width: 100%;
     height: 100%;
     padding-left: 10px;
@@ -615,11 +647,16 @@
     }
   }
 
-  .showModal {
-    display: flex;
-  }
-
   .closeModal {
     display: none;
   }
+}
+
+.overflow-text {
+  position: absolute;
+  top: 0;
+  width: 150px; /* Largeur fixe ou maximale */
+  white-space: nowrap; /* Empêche le texte de se retourner à la ligne */
+  overflow: hidden; /* Cache le contenu dépassant */
+  text-overflow: ellipsis; /* Remplace le texte dépassant par des points de suspension */
 }

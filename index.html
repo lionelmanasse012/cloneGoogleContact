@@ -74,7 +74,10 @@
         </div>
 
         <ul id="modalCreateContact" class="modalCreateContact">
-          <li id="modalCreateContactItemCreateContact" class="modalCreateContactItem">
+          <li
+            id="modalCreateContactItemCreateContact"
+            class="modalCreateContactItem"
+          >
             <i class="material-symbols-outlined">person</i>
             <span class="">Créer un contact</span>
           </li>
@@ -116,7 +119,10 @@
                 >download</i
               >Importer
             </li>
-            <li id="homeContactOthersItemCorbeille" class="homeContactOthersItem">
+            <li
+              id="homeContactOthersItemCorbeille"
+              class="homeContactOthersItem"
+            >
               <i class="material-symbols-outlined" aria-hidden="true">delete</i
               >Corbeille
             </li>
@@ -171,7 +177,7 @@
                 </div>
               </div>
             </li>
-            <li
+            <!-- <li
               id="fc9df8f2-329d-4d1a-b8f6-2ee03ea739dc"
               class="homeContactLibelleListItem"
             >
@@ -482,7 +488,7 @@
                   >
                 </div>
               </div>
-            </li>
+            </li> -->
           </ul>
         </div>
       </div>
@@ -520,7 +526,7 @@
         </div>
       </div>
 
-      <div id="homeContactRightAdded" class="homeContactRightAdded">
+      <div id="homeContactRightAdded" class="homeContactRightAdded closeModal">
         <div class="homeContactContainer">
           <div class="homeContactTitle">
             <span class="homeContactTitleLabel">Contacts</span>
@@ -550,7 +556,40 @@
             <br />
             <span class="homeContactAddedLabel">Contacts</span>
 
-            <div class="homeAllContact">
+            <div id="homeAllContact" class="homeAllContact">
+              <!-- <ul id="homeContactCreated" class="homeContactCreated">
+                <li class="homeContactCreatedItem drag_indicator">
+                  <i class="material-icons" aria-hidden="true"
+                    >drag_indicator</i
+                  >
+                </li>
+                <li class="homeContactCreatedItem">
+                  <div class="checkboxBlock">
+                    <input class="checkbox" type="checkbox" />
+                  </div>
+                  <span class="accountImg">A</span>
+                </li>
+                <li class="homeContactCreatedItem">Lionel Manassé</li>
+                <li class="homeContactCreatedItem">
+                  lionelmutombo.mtb@gmail.com
+                </li>
+                <li class="homeContactCreatedItem">+243828378582</li>
+                <li class="homeContactCreatedItem">
+                  Développeur, Présidence de la RDC
+                </li>
+                <li class="homeContactCreatedItem">
+                  <button class="homeContactCreatedAddLabel">Famille</button>
+                </li>
+                <li
+                  class="homeContactAddedTopBarItem homeContactAddedTopBarItemBlockIcons"
+                >
+                  <i class="material-icons" aria-hidden="true">star_outline</i>
+                  <i class="material-symbols-outlined" aria-hidden="true"
+                    >edit</i
+                  >
+                  <i class="material-icons" aria-hidden="true">more_vert</i>
+                </li>
+              </ul>
               <ul id="homeContactCreated" class="homeContactCreated">
                 <li class="homeContactCreatedItem drag_indicator">
                   <i class="material-icons" aria-hidden="true"
@@ -584,12 +623,45 @@
                   <i class="material-icons" aria-hidden="true">more_vert</i>
                 </li>
               </ul>
+              <ul id="homeContactCreated" class="homeContactCreated">
+                <li class="homeContactCreatedItem drag_indicator">
+                  <i class="material-icons" aria-hidden="true"
+                    >drag_indicator</i
+                  >
+                </li>
+                <li class="homeContactCreatedItem">
+                  <div class="checkboxBlock">
+                    <input class="checkbox" type="checkbox" />
+                  </div>
+                  <span class="accountImg">A</span>
+                </li>
+                <li class="homeContactCreatedItem">Lionel Manassé</li>
+                <li class="homeContactCreatedItem">
+                  lionelmutombo.mtb@gmail.com
+                </li>
+                <li class="homeContactCreatedItem">+243828378582</li>
+                <li class="homeContactCreatedItem">
+                  Développeur,Présidence de la RDC
+                </li>
+                <li class="homeContactCreatedItem">
+                  <button class="homeContactCreatedAddLabel">Famille</button>
+                </li>
+                <li
+                  class="homeContactAddedTopBarItem homeContactAddedTopBarItemBlockIcons"
+                >
+                  <i class="material-icons" aria-hidden="true">star_outline</i>
+                  <i class="material-symbols-outlined" aria-hidden="true"
+                    >edit</i
+                  >
+                  <i class="material-icons" aria-hidden="true">more_vert</i>
+                </li>
+              </ul> -->
             </div>
           </div>
         </div>
       </div>
 
-      <div id="homeCreateContact" class="homeCreateContact">
+      <div id="homeCreateContact" class="homeCreateContact closeModal">
         <div class="homeCreateContactContainer">
           <div class="homeCreateContactTopBarBlock">
             <ul class="homeCreateContactTopBar">
@@ -598,14 +670,17 @@
               </li>
               <li class="homeCreateContactTopBarItem">
                 <i class="material-icons" aria-hidden="true">star_outline</i>
-                <button class="homeCreateContactTopBarItemBtn">
+                <button
+                  id="homeCreateContactTopBarItemBtn"
+                  class="homeCreateContactTopBarItemBtn"
+                >
                   Enregistrer
                 </button>
               </li>
             </ul>
           </div>
 
-          <div class="homeCreateContactBottom">
+          <div id="homeCreateContactBottom" class="homeCreateContactBottom">
             <ul class="homeCreateContactBlockImg">
               <li class="homeCreateContactBlockImgItem">
                 <img
@@ -633,26 +708,30 @@
                 <i class="material-symbols-outlined icons" aria-hidden="true"
                   >person</i
                 >
-                <input type="text" placeholder="Prénom" />
+                <input id="inputPrenom" type="text" placeholder="Prénom" />
               </div>
 
               <div class="homeCreateContactFormNom">
-                <input type="text" placeholder="Nom" />
+                <input id="inputNom" type="text" placeholder="Nom" />
               </div>
 
               <div class="homeCreateContactFormEntreprise">
                 <i class="material-icons icons" aria-hidden="true">domain</i>
-                <input type="text" placeholder="Entreprise" />
+                <input
+                  id="inputEntreprise"
+                  type="text"
+                  placeholder="Entreprise"
+                />
               </div>
               <div class="homeCreateContactFormFonction">
-                <input type="text" placeholder="Fonction" />
+                <input id="inputFonction" type="text" placeholder="Fonction" />
               </div>
 
               <div class="homeCreateContactFormEmail">
                 <i class="material-symbols-outlined icons" aria-hidden="true"
                   >mail</i
                 >
-                <input type="text" placeholder="E-mail" />
+                <input id="inputMail" type="text" placeholder="E-mail" />
               </div>
 
               <div class="addMailBtn">
@@ -690,7 +769,10 @@
         </div>
       </div>
     </section>
-
+    <div class="overflow-text">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua.
+    </div>
     <script src="./js/intlTelInput.js"></script>
     <script src="./js/index.js"></script>
     <script>
