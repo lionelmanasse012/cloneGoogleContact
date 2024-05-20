@@ -216,7 +216,7 @@
           display: flex;
           align-items: center;
           height: 100%;
-          border-radius: 0 999px 999px 0;
+          border-radius: 999px;
           background: transparent;
           opacity: 0;
           cursor: pointer;
@@ -407,7 +407,7 @@
             transition: all 0.3s ease;
 
             &:hover {
-              background: #0b57d014;
+              background: #d3e2fd;
             }
             &:hover .drag_indicator i {
               opacity: 1;
@@ -513,7 +513,7 @@
           }
 
           .homeContactChecked {
-            background: #0b57d014;
+            background: #d3e2fd;
 
             .drag_indicator i {
               opacity: 1;
@@ -652,11 +652,12 @@
   }
 }
 
-.overflow-text {
-  position: absolute;
-  top: 0;
-  width: 150px; /* Largeur fixe ou maximale */
-  white-space: nowrap; /* Empêche le texte de se retourner à la ligne */
-  overflow: hidden; /* Cache le contenu dépassant */
-  text-overflow: ellipsis; /* Remplace le texte dépassant par des points de suspension */
+.hamburgerLeft{
+  // display: none;
+  width: 20px;
+  transition: all .5s;
+}
+
+.hamburgerRight{
+  width: 100%;
 }

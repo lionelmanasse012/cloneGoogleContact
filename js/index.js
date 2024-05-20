@@ -1,6 +1,13 @@
+const hamburgerMenu = document.getElementById("hamburgerMenu");
+const homeContactLeft = document.getElementById("homeContactLeft");
+
 const homeContactRightEmpty = document.getElementById("homeContactRightEmpty");
 const homeContactRightAdded = document.getElementById("homeContactRightAdded");
 const homeCreateContact = document.getElementById("homeCreateContact");
+const homeContactTotalLeft = document.querySelector("#homeContactTotalLeft");
+const homeContactTotalRight = document.querySelector("#homeContactTotalRight");
+let contactTotal = 0;
+
 const createContactBtnBlockLeft = document.getElementById(
   "homeCreateContactBtn"
 );
@@ -19,6 +26,12 @@ const openModalLabelBtn = document.getElementById("homeContactAddLibelle");
 const openLabelClick = document.getElementById(
   "fc9df8f2-329d-4d1a-b8f6-2ee03ea739dc"
 );
+
+hamburgerMenu.addEventListener("click", function () {
+  console.log("good");
+  homeContactLeft.classList.toggle("hamburgerLeft")
+  homeContactLeft.style.transition = "all 0.5s ease"
+})
 
 createContactBtnBlockLeft.addEventListener("click", function () {
   openModalCreateContactBtn.classList.toggle("showModal");
@@ -147,7 +160,7 @@ function addContact(
   );
 
   homeAllContact.appendChild(homeContactCreated);
-  
+
   checkbox.addEventListener("change", function () {
     if (this.checked) {
       homeContactCreated.classList.add("homeContactChecked");
@@ -156,13 +169,6 @@ function addContact(
     }
   });
 }
-// console.log(addContact());
-// const homeContactCreatedItem = createElement("li", {
-//   id: "homeContactCreatedItem",
-//   className: "homeContactCreatedItem",
-// });
-// homeContactCreatedItem.classList.add("drag_indicator")
-// console.log(homeContactCreatedItem);
 
 // create contact
 const contactSaved = document.getElementById("homeCreateContactTopBarItemBtn");
@@ -188,6 +194,7 @@ contactSaved.addEventListener("click", function () {
   ) {
     return;
   } else {
+    contactTotal += 1;
     const prenom = data("prenom " + contactId, inputPrenom.value);
     const nom = data("nom " + contactId, inputNom.value);
     const entreprise = data("entreprise " + contactId, inputEntreprise.value);
@@ -208,15 +215,8 @@ contactSaved.addEventListener("click", function () {
     inputPhone.value = "";
 
     addContact("A", prenom, nom, email, phone, entreprise, fonction, "Bureau");
+    homeContactTotalLeft.textContent = contactTotal;
+    homeContactTotalRight.textContent = `( ${contactTotal} )`;
   }
 });
 
-// const contactChecked = document.getElementsByClassName("checkbox");
-// contactChecked.addEventListener("click", function () {
-//   if (this.checked) {
-//     // document.body.style.background = "red";
-//     console.log("kitoko");
-//   }
-// });
-// contactChecked.che
-// console.log(contactChecked);
