@@ -289,6 +289,7 @@ body {
 .home {
   display: flex;
   height: calc(100vh - 70px);
+  justify-content: end;
   padding: 8px;
 }
 .home .homeContactLeft {
@@ -296,6 +297,7 @@ body {
   min-width: 268px;
   height: 100%;
   overflow: hidden;
+  transition: all 0.3s ease;
 }
 .home .homeContactLeft:hover {
   overflow: auto;
@@ -493,10 +495,17 @@ body {
 .home .homeContactLeft .homeContactLibelleList .homeContactLibelleListItem .homeContactLibelleUpdate .homeContactLibelleUpdateBlock:hover {
   background: rgba(49, 54, 58, 0.1098039216);
 }
+.home .hamburgerLeft {
+  transform: translateX(-500px);
+  min-width: auto;
+  width: 0;
+  transition: all 0.3s ease;
+}
 .home .homeContactRightEmpty {
   display: flex;
-  width: 100%;
+  width: calc(100% - 268px);
   padding-left: 10px;
+  transition: all 0.3s ease;
 }
 .home .homeContactRightEmpty .homeContactContainer {
   position: relative;
@@ -541,13 +550,18 @@ body {
 .home .homeContactRightEmpty .homeContactEmpty .homeContactEmptyImgBlock .homeContactEmptyImg {
   width: 100%;
 }
+.home .homeRightFullScreen {
+  width: 100%;
+  transition: all 0.3s ease;
+}
 .home .closeModal {
   display: none;
 }
 .home .homeContactRightAdded {
   display: flex;
-  width: 100%;
+  width: calc(100% - 268px);
   padding-left: 10px;
+  transition: all 0.3s ease;
 }
 .home .homeContactRightAdded .homeContactContainer {
   background: #fff;
@@ -756,14 +770,19 @@ body {
 .home .homeContactRightAdded .homeContactEmpty .homeContactEmptyImgBlock .homeContactEmptyImg {
   width: 100%;
 }
+.home .homeRightFullScreen {
+  width: 100%;
+  transition: all 0.3s ease;
+}
 .home .closeModal {
   display: none;
 }
 .home .homeCreateContact {
   display: flex;
-  width: 100%;
+  width: calc(100% - 268px);
   height: 100%;
   padding-left: 10px;
+  transition: all 0.3s ease;
 }
 .home .homeCreateContact .homeCreateContactContainer {
   position: relative;
@@ -834,15 +853,10 @@ body {
   color: #fff;
   cursor: pointer;
 }
+.home .homeRightFullScreen {
+  width: 100%;
+  transition: all 0.3s ease;
+}
 .home .closeModal {
   display: none;
-}
-
-.hamburgerLeft {
-  width: 20px;
-  transition: all 0.5s;
-}
-
-.hamburgerRight {
-  width: 100%;
 }/*# sourceMappingURL=style.css.map */

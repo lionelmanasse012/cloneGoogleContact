@@ -7,6 +7,7 @@ const homeCreateContact = document.getElementById("homeCreateContact");
 const homeContactTotalLeft = document.querySelector("#homeContactTotalLeft");
 const homeContactTotalRight = document.querySelector("#homeContactTotalRight");
 let contactTotal = 0;
+const contact = [];
 
 const createContactBtnBlockLeft = document.getElementById(
   "homeCreateContactBtn"
@@ -28,10 +29,11 @@ const openLabelClick = document.getElementById(
 );
 
 hamburgerMenu.addEventListener("click", function () {
-  console.log("good");
-  homeContactLeft.classList.toggle("hamburgerLeft")
-  homeContactLeft.style.transition = "all 0.5s ease"
-})
+  homeContactLeft.classList.toggle("hamburgerLeft");
+  homeContactRightEmpty.classList.toggle("homeRightFullScreen");
+  homeContactRightAdded.classList.toggle("homeRightFullScreen");
+  homeCreateContact.classList.toggle("homeRightFullScreen");
+});
 
 createContactBtnBlockLeft.addEventListener("click", function () {
   openModalCreateContactBtn.classList.toggle("showModal");
@@ -55,7 +57,7 @@ function createElement(tag, propreties = {}) {
 
 const homeAllContact = document.getElementById("homeAllContact");
 
-function addContact(
+function createContact(
   initial,
   prenom,
   nom,
@@ -65,8 +67,6 @@ function addContact(
   fonction,
   libelle
 ) {
-  const id = crypto.randomUUID();
-
   const homeContactCreated = createElement("ul", {
     id: "homeContactCreated",
     className: "homeContactCreated",
@@ -194,13 +194,17 @@ contactSaved.addEventListener("click", function () {
   ) {
     return;
   } else {
-    contactTotal += 1;
-    const prenom = data("prenom " + contactId, inputPrenom.value);
-    const nom = data("nom " + contactId, inputNom.value);
-    const entreprise = data("entreprise " + contactId, inputEntreprise.value);
-    const fonction = data("fonction " + contactId, inputFonction.value);
-    const email = data("email " + contactId, inputMail.value);
-    const phone = data("phone " + contactId, inputPhone.value);
+    const contactElement = {
+      id: contactId,
+      prenom: inputPrenom.value,
+      nom: inputNom.value,
+      entreprise: inputEntreprise.value,
+      fonction: inputFonction.value,
+      email: inputMail.value,
+      phone: inputPhone.value,
+    };
+    contact.push(contactElement);
+    addContact();
 
     homeContactRightEmpty.classList.add("closeModal");
     homeCreateContact.classList.add("closeModal");
@@ -214,9 +218,66 @@ contactSaved.addEventListener("click", function () {
     inputMail.value = "";
     inputPhone.value = "";
 
-    addContact("A", prenom, nom, email, phone, entreprise, fonction, "Bureau");
     homeContactTotalLeft.textContent = contactTotal;
     homeContactTotalRight.textContent = `( ${contactTotal} )`;
   }
 });
 
+function addContact() {
+  let prenom;
+  let nom;
+  let entreprise;
+  let fonction;
+  let email;
+  let phone;
+
+  for (let i = 0; i < contact.length; i++) {
+    const element = contact[i];
+
+    prenom = element.prenom;
+    nom = element.nom;
+    entreprise = element.entreprise;
+    fonction = element.fonction;
+    email = element.email;
+    phone = element.phone;
+  }
+  createContact("A", prenom, nom, email, phone, entreprise, fonction, "Bureau");
+  contactTotal += 1;
+}
+
+function updateContact(
+  contactId,
+  newPrenom,
+  newNom,
+  newEntreprise,
+  newFonction,
+  newEmail,
+  newPhone
+) {
+  for (let i = 0; i < contact.length; i++) {
+    const element = contact[i];
+
+    if (element.id === contactId) {
+      element.prenom = newPrenom;
+      element.nom = newNom;
+      element.entreprise = newEntreprise;
+      element.fonction = newFonction;
+      element.email = newEmail;
+      element.phone = newPhone;
+
+      console.log("good");
+    } else {
+      console.log("none");
+    }
+  }
+}
+
+function deleteContact(contactId) {
+  for (let i = 0; i < contact.length; i++) {
+    const element = contact[i];
+
+    if (element.id === contactId) {
+      contact.splice(element);
+    }
+  }
+}

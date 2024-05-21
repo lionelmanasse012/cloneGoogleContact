@@ -1,6 +1,8 @@
 const activeModal = document.querySelector("#homeContactAddLibelle");
 
-const libelle = getElement("homeContactLibelleList");
+const libelle = document.getElementById("homeContactLibelleList");
+const labelList = [];
+let idLabel;
 
 const modalBlockContainer = createElement("div", {
   id: "modalBlockContainer",
@@ -107,12 +109,17 @@ function createButtonUpdate(text, className, clickHandler) {
   });
 }
 
-function updateLabel(labelId, labelDescriptionId) {
-  const label = getElement(labelId);
-  // const inputName = label.querySelector(labelDescriptionId);
-  const newLabelName = inputName.textContent;
-  inputLabelName.value = newLabelName;
-  openModal();
+function updateLabel(labelId, newLabelName) {
+  const label = document.getElementById(labelId);
+  const labelDescription = label.querySelector(".labelDescription");
+
+  for (let i = 0; i < labelList.length; i++) {
+    const element = labelList[i];
+    if (element.id === label.id) {
+      element.description = newLabelName;
+      labelDescription.textContent = element.description;
+    }
+  }
 }
 
 function deleteLabel(labelId) {
@@ -120,11 +127,13 @@ function deleteLabel(labelId) {
   label.remove();
 }
 
-function createLabel(labelName) {
-  const labelId = crypto.randomUUID();
-  const labelDescriptionId = `label:${labelId}`;
+function createLabel(labelId, labelName) {
+  const id = labelId;
+
+  const label = { id: id, description: labelName };
+
   const contactLeftLibelleItem = createElement("li", {
-    id: labelId,
+    id: label.id,
     className: "homeContactLibelleListItem",
   });
 
@@ -136,9 +145,9 @@ function createLabel(labelName) {
   const labelIcon = createIcone("label", "material-icons");
 
   const labelDescription = createElement("span", {
-    id: labelDescriptionId,
+    // id: labelDescriptionId,
     className: "labelDescription",
-    textContent: labelName,
+    textContent: label.description,
   });
   contactLeftLibelleIconeBlock.append(labelIcon, labelDescription);
 
@@ -155,13 +164,17 @@ function createLabel(labelName) {
     "homeContactLibelleUpdateBlock"
   );
 
+  labelList.push(label);
   const contactLeftLibelleEdit = createButtonUpdate(
     "edit",
     "material-symbols-outlined",
     function () {
+      const id = getIdOfLi(this);
+      idLabel = id;
+      openModal();
+      inputLibelle.value = labelName;
       const newTitle = "Renommer le libellé";
       title.textContent = newTitle;
-      updateLabel(labelId, labelDescriptionId);
     }
   );
   contactLeftLibelleEdit.classList.add(
@@ -217,15 +230,32 @@ modalActived.addEventListener("click", function () {
 
 inputSave.addEventListener("click", function (event) {
   event.preventDefault();
-  const labelName = inputLibelle.value;
-  if (labelName.trim() === "" || null || undefined) {
-    inputLibelle.value = "";
-    inputLibelle.focus();
-    return;
+  const id = crypto.randomUUID();
+  const create = "Créer un libellé";
+  const rename = "Renommer le libellé";
+
+  if (title.textContent === create) {
+    const labelName = inputLibelle.value;
+    if (labelName.trim() === "" || null || undefined) {
+      inputLibelle.value = "";
+      inputLibelle.focus();
+      return;
+    } else {
+      createLabel(id, labelName.trim());
+      inputLibelle.value = "";
+      removeModal();
+    }
   } else {
-    createLabel(labelName.trim());
-    inputLibelle.value = "";
-    removeModal();
+    for (let i = 0; i < labelList.length; i++) {
+      const label = labelList[i];
+      if (label.id === idLabel) {
+        label.description = inputLibelle.value;
+        deleteLabel(label.id);
+        createLabel(label.id, label.description);
+        inputLibelle.value = "";
+        removeModal();
+      }
+    }
   }
 });
 
@@ -233,3 +263,9 @@ inputCancel.addEventListener("click", function () {
   inputLibelle.value = "";
   removeModal();
 });
+
+function getIdOfLi(element) {
+  const liElement = element.closest("li");
+  const liId = liElement.id;
+  return liId;
+}

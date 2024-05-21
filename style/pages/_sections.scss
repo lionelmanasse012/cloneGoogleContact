@@ -1,6 +1,7 @@
 .home {
   display: flex;
   height: calc(100vh - 70px);
+  justify-content: end;
   padding: 8px;
 
   .homeContactLeft {
@@ -8,6 +9,7 @@
     min-width: 268px;
     height: 100%;
     overflow: hidden;
+    transition: all 0.3s ease;
 
     &:hover {
       overflow: auto;
@@ -244,10 +246,18 @@
     }
   }
 
+  .hamburgerLeft {
+    transform: translateX(-500px);
+    min-width: auto;
+    width: 0;
+    transition: all .3s ease;
+  }
+
   .homeContactRightEmpty {
     display: flex;
-    width: 100%;
+    width: calc(100% - 268px);
     padding-left: 10px;
+    transition: all 0.3s ease;
 
     .homeContactContainer {
       position: relative;
@@ -301,14 +311,20 @@
     }
   }
 
+  .homeRightFullScreen{
+    width: 100%;
+    transition: all .3s ease;
+  }
+
   .closeModal {
     display: none;
   }
 
   .homeContactRightAdded {
     display: flex;
-    width: 100%;
+    width: calc(100% - 268px);
     padding-left: 10px;
+    transition: all 0.3s ease;
 
     .homeContactContainer {
       background: #fff;
@@ -555,15 +571,21 @@
     }
   }
 
+  .homeRightFullScreen{
+    width: 100%;
+    transition: all .3s ease;
+  }
+
   .closeModal {
     display: none;
   }
 
   .homeCreateContact {
     display: flex;
-    width: 100%;
+    width: calc(100% - 268px);
     height: 100%;
     padding-left: 10px;
+    transition: all 0.3s ease;
 
     .homeCreateContactContainer {
       position: relative;
@@ -647,17 +669,12 @@
     }
   }
 
+  .homeRightFullScreen{
+    width: 100%;
+    transition: all .3s ease;
+  }
+
   .closeModal {
     display: none;
   }
-}
-
-.hamburgerLeft{
-  // display: none;
-  width: 20px;
-  transition: all .5s;
-}
-
-.hamburgerRight{
-  width: 100%;
 }

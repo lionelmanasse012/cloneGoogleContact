@@ -11,20 +11,20 @@
     gap: 1rem;
     min-width: 268px;
 
-    .material-symbols-outlined{
+    .material-symbols-outlined {
       padding: 12px;
       cursor: pointer;
 
-      &:hover{
+      &:hover {
         background: #f1f3f4;
         border-radius: 999px;
       }
     }
-    .navLeftLogo{
+    .navLeftLogo {
       width: 40px;
       height: 40px;
     }
-    .navLeftLabel{
+    .navLeftLabel {
       font-size: 1.2rem;
     }
   }
